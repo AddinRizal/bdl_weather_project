@@ -1,15 +1,4 @@
 # bdl_weather/dashboard/app.py
-from __future__ import annotations
-
-import sys
-from pathlib import Path
-
-# Pastikan root repo masuk ke PYTHONPATH (penting untuk Streamlit Cloud)
-ROOT = Path(__file__).resolve().parents[2]  # .../bdl_weather_project
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-    
-# bdl_weather/dashboard/app.py
 import json
 import os
 from datetime import date, timedelta
@@ -164,7 +153,6 @@ def plot_temperature_with_ma(df: pd.DataFrame, city_name: str, show_ma24: bool, 
     )
     st.plotly_chart(fig, use_container_width=True)
 
-    # Ringkasan angka biar gampang dipahami
     last_temp = float(df["temperature_2m"].iloc[-1])
     cols = st.columns(4)
     cols[0].metric("Suhu terakhir", f"{last_temp:.2f} °C")
@@ -206,7 +194,6 @@ def plot_actual_vs_pred(df: pd.DataFrame, city_id: str):
     df_feat["pred_temp_next1h"] = model.predict(df_feat[features])
     df_feat["actual_temp_next1h"] = df_feat["temperature_2m"].shift(-1)
 
-    # Info model dibuat lebih “manusiawi”
     st.caption(
         f"Model prediksi: {meta['best']['model']} | "
         f"Rata-rata selisih prediksi (MAE): {meta['best']['mae']:.3f} °C | "
@@ -261,7 +248,6 @@ def main():
         help="Streaming = data dari pipeline Kafka→Spark→Cassandra. Historical = data historis beberapa hari terakhir dari Open-Meteo (lebih rame untuk analisis).",
     )
 
-    # kontrol agar awam nggak bingung
     colA, colB, colC = st.columns(3)
     show_ma24 = colA.checkbox("Tampilkan rata-rata 1 hari", value=True)
     show_ma72 = colB.checkbox("Tampilkan rata-rata 3 hari", value=True)

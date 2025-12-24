@@ -1,14 +1,3 @@
-# bdl_weather/dashboard/app.py
-from __future__ import annotations
-
-import sys
-from pathlib import Path
-
-# Pastikan root repo masuk ke PYTHONPATH (penting untuk Streamlit Cloud)
-ROOT = Path(__file__).resolve().parents[2]  # .../bdl_weather_project
-if str(ROOT) not in sys.path:
-    sys.path.insert(0, str(ROOT))
-
 # bdl_weather/ml/train_temp_next1h.py
 import argparse
 import json
