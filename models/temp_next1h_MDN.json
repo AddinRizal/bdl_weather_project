@@ -1,0 +1,40 @@
+{
+  "city_id": "MDN",
+  "city_name": "Medan",
+  "features": [
+    "temperature_2m",
+    "apparent_temperature",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "cloud_cover",
+    "pressure_msl",
+    "wind_speed_10m",
+    "weather_code",
+    "hour",
+    "dow"
+  ],
+  "horizon_hours": 1,
+  "days_history": 180,
+  "baseline": {
+    "mae": 0.5760644418872267,
+    "mse": 0.6822784810126581
+  },
+  "candidates": [
+    {
+      "model": "LinearRegression",
+      "mae": 0.5999211808806795,
+      "mse": 0.6324074000737806
+    },
+    {
+      "model": "RandomForest",
+      "mae": 0.4204856156501735,
+      "mse": 0.41375447640966634
+    }
+  ],
+  "best": {
+    "model": "RandomForest",
+    "mae": 0.4204856156501735,
+    "mse": 0.41375447640966634
+  }
+}

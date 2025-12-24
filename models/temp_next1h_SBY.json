@@ -1,0 +1,40 @@
+{
+  "city_id": "SBY",
+  "city_name": "Surabaya",
+  "features": [
+    "temperature_2m",
+    "apparent_temperature",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "cloud_cover",
+    "pressure_msl",
+    "wind_speed_10m",
+    "weather_code",
+    "hour",
+    "dow"
+  ],
+  "horizon_hours": 1,
+  "days_history": 180,
+  "baseline": {
+    "mae": 0.6307249712313003,
+    "mse": 0.8287341772151899
+  },
+  "candidates": [
+    {
+      "model": "LinearRegression",
+      "mae": 0.627477564446921,
+      "mse": 0.7638804030015898
+    },
+    {
+      "model": "RandomForest",
+      "mae": 0.4394760260836213,
+      "mse": 0.43467831914077487
+    }
+  ],
+  "best": {
+    "model": "RandomForest",
+    "mae": 0.4394760260836213,
+    "mse": 0.43467831914077487
+  }
+}

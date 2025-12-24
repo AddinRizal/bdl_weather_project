@@ -1,0 +1,40 @@
+{
+  "city_id": "JKT",
+  "city_name": "Jakarta",
+  "features": [
+    "temperature_2m",
+    "apparent_temperature",
+    "relative_humidity_2m",
+    "precipitation",
+    "rain",
+    "cloud_cover",
+    "pressure_msl",
+    "wind_speed_10m",
+    "weather_code",
+    "hour",
+    "dow"
+  ],
+  "horizon_hours": 1,
+  "days_history": 180,
+  "baseline": {
+    "mae": 0.7016110471806675,
+    "mse": 0.9366513233601839
+  },
+  "candidates": [
+    {
+      "model": "LinearRegression",
+      "mae": 0.6624924818355283,
+      "mse": 0.8234457539018487
+    },
+    {
+      "model": "RandomForest",
+      "mae": 0.4301706942846205,
+      "mse": 0.4092185778033511
+    }
+  ],
+  "best": {
+    "model": "RandomForest",
+    "mae": 0.4301706942846205,
+    "mse": 0.4092185778033511
+  }
+}

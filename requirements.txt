@@ -1,0 +1,10 @@
+requests
+kafka-python
+python-dotenv
+pandas
+cassandra-driver
+streamlit
+plotly
+scikit-learn
+joblib
+pyspark==3.5.1
