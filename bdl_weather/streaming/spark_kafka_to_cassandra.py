@@ -1,3 +1,14 @@
+# bdl_weather/dashboard/app.py
+from __future__ import annotations
+
+import sys
+from pathlib import Path
+
+# Pastikan root repo masuk ke PYTHONPATH (penting untuk Streamlit Cloud)
+ROOT = Path(__file__).resolve().parents[2]  # .../bdl_weather_project
+if str(ROOT) not in sys.path:
+    sys.path.insert(0, str(ROOT))
+    
 from pyspark.sql import SparkSession
 from pyspark.sql.functions import col, from_json, to_timestamp, to_date
 from pyspark.sql.types import StructType, StructField, StringType, DoubleType, IntegerType
